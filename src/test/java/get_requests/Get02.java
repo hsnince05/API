@@ -1,11 +1,10 @@
-package get_request;
+package get_requests;
 
 import io.restassured.response.Response;
 import org.junit.Assert;
 import org.junit.Test;
 
 import static io.restassured.RestAssured.given;
-import static org.junit.Assert.*;
 
 public class Get02 {
     /*

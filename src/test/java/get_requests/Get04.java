@@ -1,4 +1,4 @@
-package get_request;
+package get_requests;
 
 import base_urls.JsonPlaceHolderBaseUrl;
 import io.restassured.http.ContentType;
@@ -55,6 +55,9 @@ public class Get04 extends JsonPlaceHolderBaseUrl {
 
 
 
+          // hasSize() ==> eleman sayisini assert eder
+          // hasItem() ==> contains() methodu gibi objenin icerip icerilmedigini assert eder
+          // hasItems() ==> containsAll() methodu gibi birden fazla objeinin icerip icermedigini assert eder.
 
 
 
