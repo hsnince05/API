@@ -9,9 +9,17 @@ public class JsonPlaceHolderTestData {
 
 
         Map<String,Object> expectedData = new HashMap<>();
-        expectedData.put("userId",userId);
-        expectedData.put("title",title);
-        expectedData.put("comleted",completed);
+        if (userId!=null){
+            expectedData.put("userId",userId);
+        }
+
+        if (title!=null){
+            expectedData.put("title",title);
+        }
+
+        if(completed!=null){
+            expectedData.put("comleted",completed);
+        }
 
         return expectedData;
     }

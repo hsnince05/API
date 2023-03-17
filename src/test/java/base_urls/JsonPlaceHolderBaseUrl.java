@@ -7,11 +7,10 @@ import org.junit.Before;
 
 public class JsonPlaceHolderBaseUrl {
 
-    protected RequestSpecification spec ;
+    protected RequestSpecification spec;
 
     @Before//Her test methodundan önce çalışır.
     public void setUp() {
-        spec = new RequestSpecBuilder().setAccept(ContentType.JSON).setBaseUri("https://jsonplaceholder.typicode.com").build();
-        //spec = new RequestSpecBuilder().setAccept(ContentType.JSON).setBaseUri("https://reqres.in/api/users").build();
+        spec = new RequestSpecBuilder().setContentType(ContentType.JSON).setAccept(ContentType.JSON).setBaseUri("https://jsonplaceholder.typicode.com").build();
     }
 }
