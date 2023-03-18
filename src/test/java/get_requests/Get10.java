@@ -49,6 +49,7 @@ public class Get10 extends GoRestBaseUrl {
         Response response = given().spec(spec).get("/{first}/{second}");
         response.prettyPrint();
 
+        System.out.println("response.statusCode() = " + response.statusCode());
 
 
         //Do assertion
