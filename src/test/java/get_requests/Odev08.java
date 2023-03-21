@@ -1,6 +1,7 @@
 package get_requests;
 
 import base_urls.SwaggerPetstoreBaseUrl;
+import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.junit.Test;
 import test_data.SwaggerPetstoreTestData;
@@ -15,32 +16,26 @@ import static org.junit.Assert.assertEquals;
 public class Odev08 extends SwaggerPetstoreBaseUrl {
 
 
+
     @Test
-    public void odev08(){
-        //Set the URL
-        spec.pathParam("first","user");
+    public void post01() {
+        spec.pathParam("first", "user");
+        Map<String, Object> expectedData = new HashMap<>();//Pojo class ile de payload oluşturabilirsiniz
+        expectedData.put("username", "JohnDoe");
+        expectedData.put("firstName", "John");
+        expectedData.put("lastName", "Doe");
+        expectedData.put("email", "john@doe.com");
+        expectedData.put("password", "1234");
+        expectedData.put("phone", "1234");
+        expectedData.put("userStatus", 123);
 
-
-        //Set the expectedData
-        SwaggerPetstoreTestData obj = new SwaggerPetstoreTestData();
-        Map<String,Object> expectedData = obj.expectedDataMethod(19955,"hasanince","hasan","ince","fdjshfjdhs","hasan05","5454",54789);
-        System.out.println(expectedData);
-
-
-        // Send the request and get the response
-        Response response = given().spec(spec).when().body(expectedData).post("/{first}");
+        Response response = given().spec(spec).contentType(ContentType.JSON).body(expectedData).when().post("/{first}");
         response.prettyPrint();
 
-        Map<String,Object>actual = response.as(HashMap.class);
-        System.out.println("actual = " + actual);
-
-        //Do assertion
+        Map<String ,Object> actualData =response.as(HashMap.class);
         assertEquals(200,response.statusCode());
-
-        spec.pathParams("first","user","second",19955);
-
-        given().spec(spec).when().get("/{first}/{second}");
-
+        assertEquals(200,actualData.get("code"));
+        assertEquals("unknown",actualData.get("type"));
     }
 
 }
