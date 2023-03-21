@@ -1,6 +1,7 @@
 package pojos;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true) // karşıdan gelen datalari uyusmama durumunda ignore et dedik.. yani id burada olmadigi icin Post03 de id olmadigi icin
                                             // "ava.lang.RuntimeException: com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException: Unrecognized field "id" (class pojos.JsonPlaceHolderPojo), not marked as ignorable (3 known properties: "title", "completed", "userId"])"
