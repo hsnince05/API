@@ -4,24 +4,23 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class BookingResponsePojo {
-
-    private Integer bookiingid;
+    private Integer bookingid;
     private BookingPojo booking;
 
     public BookingResponsePojo() {
     }
 
-    public BookingResponsePojo(Integer bookiingid, BookingPojo booking) {
-        this.bookiingid = bookiingid;
+    public BookingResponsePojo(Integer bookingid, BookingPojo booking) {
+        this.bookingid = bookingid;
         this.booking = booking;
     }
 
-    public Integer getBookiingid() {
-        return bookiingid;
+    public Integer getBookingid() {
+        return bookingid;
     }
 
-    public void setBookiingid(Integer bookiingid) {
-        this.bookiingid = bookiingid;
+    public void setBookingid(Integer bookingid) {
+        this.bookingid = bookingid;
     }
 
     public BookingPojo getBooking() {
@@ -35,7 +34,7 @@ public class BookingResponsePojo {
     @Override
     public String toString() {
         return "BookingResponsePojo{" +
-                "bookiingid=" + bookiingid +
+                "bookingid=" + bookingid +
                 ", booking=" + booking +
                 '}';
     }
