@@ -10,7 +10,7 @@ public class GoRestBaseUrl {
 
     @Before//Her test methodundan önce çalışır.
     public void setUp() {
-        spec = new RequestSpecBuilder().setBaseUri("https://gorest.co.in/public/v1").build();
+        spec = new RequestSpecBuilder().setBaseUri("https://gorest.co.in/public/v2").build();
 
     }
 }

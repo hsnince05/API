@@ -1,4 +1,4 @@
-package AutomationExerciseUserTpePojo;
+package pojos;
 
 public class AutomationExerciseUserTypePojo {
 }

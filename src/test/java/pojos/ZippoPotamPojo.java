@@ -1,5 +1,6 @@
 package pojos;
 
+
 import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -7,7 +8,7 @@ public class ZippoPotamPojo {
     private String postCode;
     private String country;
     private String countryAbbreviation;
-    private ZippoPotamplacesPojo places;
+    private ZippoPotamplacesPojo zippoPotamplacesPojo;
 
     public ZippoPotamPojo() {
     }
@@ -16,7 +17,7 @@ public class ZippoPotamPojo {
         this.postCode = postCode;
         this.country = country;
         this.countryAbbreviation = countryAbbreviation;
-        this.places = places;
+        this.zippoPotamplacesPojo = places;
     }
 
     public String getPostCode() {
@@ -43,12 +44,12 @@ public class ZippoPotamPojo {
         this.countryAbbreviation = countryAbbreviation;
     }
 
-    public ZippoPotamplacesPojo getPlaces() {
-        return places;
+    public ZippoPotamplacesPojo getZippoPotamplacesPojo() {
+        return zippoPotamplacesPojo;
     }
 
-    public void setPlaces(ZippoPotamplacesPojo places) {
-        this.places = places;
+    public void setZippoPotamplacesPojo(ZippoPotamplacesPojo zippoPotamplacesPojo) {
+        this.zippoPotamplacesPojo = zippoPotamplacesPojo;
     }
 
     @Override
@@ -57,7 +58,7 @@ public class ZippoPotamPojo {
                 "postCode='" + postCode + '\'' +
                 ", country='" + country + '\'' +
                 ", countryAbbreviation='" + countryAbbreviation + '\'' +
-                ", places=" + places +
+                ", places=" + zippoPotamplacesPojo +
                 '}';
     }
 }

@@ -1,6 +1,5 @@
 package pojos;
 
-import AutomationExerciseUserTpePojo.AutomationExerciseUserTypePojo;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)

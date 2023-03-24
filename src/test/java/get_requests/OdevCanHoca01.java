@@ -1,6 +1,5 @@
 package get_requests;
 
-import base_urls.GoRestBaseUrl;
 import base_urls.ZippoPotamBaseUrl;
 import io.restassured.response.Response;
 import org.junit.Test;
@@ -9,6 +8,7 @@ import pojos.ZippoPotamplacesPojo;
 import util.ObjectMapperUtils;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import static io.restassured.RestAssured.given;
@@ -50,13 +50,15 @@ public class OdevCanHoca01 extends ZippoPotamBaseUrl {
         Response response = given().spec(spec).when().get("/{first}/{second}");
         response.prettyPrint();
 
+        //ZippoPotamPojo actualData = ObjectMapperUtils.convertJsonToJava(response.asString(), HashMap.class);
         Map<String,Object> actualData = ObjectMapperUtils.convertJsonToJava(response.asString(), HashMap.class);
         assertEquals(200,response.getStatusCode());
 
         assertEquals(expectedData.getPostCode(),actualData.get("post code"));
         assertEquals(expectedData.getCountry(),actualData.get("country"));
         assertEquals(expectedData.getCountryAbbreviation(),actualData.get("country abbreviation"));
-        assertEquals(expectedData.getPlaces().getPlacename(),((Map)actualData.get("places")).get("place name"));
+        assertEquals(expectedData.getZippoPotamplacesPojo().getPlacename(),((Map)((List)actualData.get("places")).get(0)).get("place name"));
+        assertEquals(expectedData.getZippoPotamplacesPojo().getLatitude(),(((Map)((List)actualData.get("places")).get(0)).get("latitude")));
 
 
 
